@@ -1,0 +1,46 @@
+
+<body class="wrapper">
+<form class="container-sm" >
+    <h2>New Account</h2>
+    <div class="costum-container bg-white">
+        <div class="row mb-3">
+            <label  for="text" class="col-sm-2 col-form-label">Last name:</label>
+            <div class="col-sm-10">
+                <input #userlastnamebox [(ngModel)]="userlastname" [ngModelOptions]="{standalone: true}" type="text" class="form-control" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="text" class="col-sm-2 col-form-label">First name:</label>
+            <div class="col-sm-10">
+                <input #userfirstnamebox  [(ngModel)]="userfirstname" [ngModelOptions]="{standalone: true}" type="text" class="form-control" required>
+            </div>
+          </div>
+        <div class="row mb-3" >
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email:</label>
+            <div class="col-sm-10">
+                <input #useremailbox  [(ngModel)]="useremail" [ngModelOptions]="{standalone: true}" type="email" class="form-control" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Password:</label>
+            <div class="col-sm-10">
+                <input #userpasswordbox  [(ngModel)]="userpassword" [ngModelOptions]="{standalone: true}" type="password" class="form-control" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Password confirm:</label>
+            <div class="col-sm-10">
+                <input type="password" [(ngModel)]="passwordconfirmation" [ngModelOptions]="{standalone: true}" class="form-control" required>
+            </div>
+        </div>
+        <form class="row row-cols-lg-auto g-3 align-items-center justify-content-center">
+            <div class="col-12"> 
+                <button (click)="addAccDB()" type="submit" class="btn btn-primary">Create</button>   
+            </div>
+            <div class="col-12"> 
+                <a class="nav-link" routerLink="/login">back</a>   
+            </div>
+        </form>
+    </div>
+</form>
+</body>

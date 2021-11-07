@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" routerLink="">
+        <span class="navgreen">REC02</span></a>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" *ngIf="!checkToken()" routerLink="/login">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="checkToken()" routerLink="/selectInputScreen">Add trip</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="checkToken()" routerLink="/showTrips">Show all trips</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" *ngIf="checkToken()"  routerLink="/showKonto">Account</a>
+          </li>
+          <li class="nav-item" *ngIf="checkToken()" >
+            <a class="nav-link" (click)="logoutToken()"  routerLink="/home">Log out</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

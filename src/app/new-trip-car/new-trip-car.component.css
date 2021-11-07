@@ -1,0 +1,27 @@
+.img-fluid{
+    max-width: 30%;  
+    height: auto;
+    
+}
+
+.img-fluid:hover{
+    cursor: pointer;
+}
+
+.bg-primary {
+    background-color: #e7ebf0!important;
+    padding-bottom: 2%;
+}
+
+
+.flex { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+#googleMap{
+   width: 80%;
+   height: 400 px; 
+}
+

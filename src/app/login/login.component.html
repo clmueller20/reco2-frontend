@@ -1,0 +1,28 @@
+<body class="wrapper">
+<form class="container-sm" >
+    <h2>Login</h2>
+    <div class="costum-container bg-white">
+        <div class="row mb-3" >
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Email:</label>
+            <div class="col-sm-10">
+                <input #useremailbox  [(ngModel)]="useremail" [ngModelOptions]="{standalone: true}" type="email" class="form-control" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Password:</label>
+            <div class="col-sm-10">
+                <input #userpasswordbox  [(ngModel)]="userpassword" [ngModelOptions]="{standalone: true}" type="password" class="form-control" required>
+            </div>
+        </div>
+        <form class="row row-cols-lg-auto g-3 align-items-center justify-content-center">
+            <div class="col-12"> 
+                <button (click)="sendUserDB()"type="submit" class="btn btn-primary">Sign in</button>   
+            </div>
+            <div class="col-12"> 
+                <a class="nav-link" routerLink="/newAccount">New Account</a>   
+            </div>
+        </form>
+    </div>
+    <h5 [(ngModel)]="loginstatus" [ngModelOptions]="{standalone: true}">{{loginstatus}}</h5>
+  </form>
+</body>

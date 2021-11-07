@@ -1,0 +1,29 @@
+<body class="wrapper">
+    <form class="container-sm" >
+        <h2>All trips</h2>
+        <div class="costum-container bg-white">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" table-dark ">
+                <tr>  
+                  <th>#</th>             
+                  <th>Vehicle</th> 
+                  <th>Emission</th> 
+                  <th>Date</th>             
+                  <th>Description</th> 
+                </tr>  
+                </thead>
+                <tbody>             
+                  <tr *ngFor='let item of listT'>                 
+                    <td>{{item.number}}</td>                 
+                    <td>{{item.vehicle}}</td>    
+                    <td>{{item.emission}}</td>                 
+                    <td>{{item.date}}</td>    
+                    <td>{{item.description}}</td>        
+                  </tr>         
+                </tbody>   
+              </table>
+          </div>
+        </div>
+    </form>
+  </body>

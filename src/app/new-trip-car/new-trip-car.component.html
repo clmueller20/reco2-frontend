@@ -1,0 +1,138 @@
+  <div class="container-sm mb-3 bg-white" >
+        <h2>Add trip</h2>
+        <div class="costum-container bg-primary">
+            <div class="card">
+                <h5 class="card-header text-white bg-dark">1: Select means of transport</h5>
+                <div class="card-body bg-primary">
+            <div class="row mt-5">
+                <div class="col-sm">
+                    <img src="assets/images/car.png" (click)="fTempShow('1')" class="img-fluid" alt="">     
+                </div>
+                <div class="col-sm">
+                    <img src="assets/images/ecar.png" (click)="fTempShow('2')" class="hover" class="img-fluid" alt="">    
+                </div>
+                <div class="col-sm">
+                     <img src="assets/images/bus.png" (click)="fTempShow('3')"  class="hover" class="img-fluid" alt="">    
+                </div>
+            </div>
+            </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-sm">
+                    <div *ngIf="ftemp1show" class="card">
+                        <h5 class="card-header text-white bg-dark">2: Select details</h5>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm mt-1">
+                                    <div class="input-group ">
+                                        <span class="input-group-text bg-primary" id="inputGroup-sizing-default">{{ftname}}</span>
+                                        <input type="text" class="form-control" [(ngModel)]="ftransportname" [ngModelOptions]="{standalone: true}" required aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                    </div>
+                                </div>
+                                <div *ngIf="!ftemp2show" class="col-sm mt-1">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Select fuel
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                            <li><a class="dropdown-item" (click)="getfuel('1')">Petrol</a></li>
+                                            <li><a class="dropdown-item" (click)="getfuel('2')">Diesel</a></li>
+                                            <li><a class="dropdown-item"(click)="getfuel('3')" >LPG</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div *ngIf="ftemp2show" class="col-sm mt-1">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Select power source
+                                        </button>
+                                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+                                            <li><a class="dropdown-item " (click)="getfuel('4')">Electricity</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-group mt-3 mb-3">
+                                <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Consumption /100km:</span>
+                                <input type="text" class="form-control" [(ngModel)]="fconsumption" [ngModelOptions]="{standalone: true}" required aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Start:</span>
+                                <input type="text" class="form-control" [(ngModel)]="fstart" [ngModelOptions]="{standalone: true}" required aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Destination:</span>
+                                <input type="text" class="form-control" [(ngModel)]="fend" [ngModelOptions]="{standalone: true}" required aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        <div class="row "> 
+                            <div class="col-sm mt-1">
+                                <div class="input-group  mb-3">
+                                    <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Distance (km):</span>
+                                    <input type="text" class="form-control" [(ngModel)]="flength" [ngModelOptions]="{standalone: true}" required aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                    </div>
+                            </div>
+                            <div class="col-sm mt-1">
+                                <button type="button" id="btnberechnen1" (click)="getLength()" class="btn btn-outline-dark">Calculate distance</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div *ngIf="ftemp1show" class="card">
+                        <h5 class="card-header text-white bg-dark">3: Time</h5>
+                        <div class="card-body">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text bg-primary" id="inputGroup-sizing-default" >Date:</span>
+                                <input type="date" [(ngModel)]="fdate" [ngModelOptions]="{standalone: true}" required class="form-control" aria-label="Sizing example input" placeholder="yyyy-mm-dd" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" [(ngModel)]="checked" [ngModelOptions]="{standalone: true}" value="1" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                  One way trip
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" [(ngModel)]="checked" [ngModelOptions]="{standalone: true}" value ="2" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Round trip
+                                </label>
+                              </div>
+                        </div>                        
+                    </div>
+                    <div  *ngIf="ftemp1show" class="card mt-5">
+                        <h5 class="card-header text-white bg-dark">4: Emission</h5>
+                        <div class="card-body">
+                            <div class="row "> 
+                                <div class="col-sm mt-1">
+                                    <div class="input-group ">
+                                        <span class="input-group-text bg-primary" id="inputGroup-sizing-default">Ammount:</span>
+                                        <input type="text" class="form-control" [(ngModel)]="femissions" [ngModelOptions]="{standalone: true}" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                    </div>
+                                </div>
+                                <div class="col-sm mt-1">
+                                    <button type="button" id="btnberechnen1" (click)="btnBerechnen()" class="btn btn-outline-dark">Calculate emission</button>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>  
+            <div *ngIf="fmapsshow" class="row" >
+                <div class="col-sm mt-3">
+                    <iframe id="ifstart" class="container-sm" [src]="murlstart"></iframe>
+                </div>
+                <div class="col-sm mt-3">
+                    <iframe id="ifend" class="container-sm" [src]="murlend"></iframe>
+                </div>
+            </div>
+            <div *ngIf="ftemp1show" class="form-floating mt-3">
+                <textarea class="form-control" [(ngModel)]="fdescription" [ngModelOptions]="{standalone: true}" required placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Description</label>
+            </div>  
+            <div *ngIf="fsave" class="d-grid gap-2 col-2 mx-auto mt-5">
+            <button type="button"  (click)="sendTrip()" class="btn btn-outline-dark">Save trip</button> 
+            </div>
+        </div>
+    </div>
+

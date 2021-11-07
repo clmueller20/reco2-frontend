@@ -1,0 +1,50 @@
+
+
+<div class="container-sm" class="background-custom">
+  <div class="row">
+    <h1>RECO2</h1>
+    <h5>Get started and learn more about us!</h5>
+    <div class="d-grid gap-2 col-2 mx-auto">
+      <button type="button" routerLink="/login" class="btn btn-outline-dark">Start now</button> 
+  </div>
+  </div>
+</div>
+<div class="container-sm mt-5">
+  <div class="row">
+      <div class="col-sm">
+        <div class="card ">
+          <h5 class="card-header bg-primary">What is RECO2</h5>
+          <div class="card-body ">
+            <p class="card-text">Reco2 is your handy mobility emissions calculator!<br />
+              The name stands for "Review" and "CO2". This is a student project by students at the DHBW Mosbach. With our application you can easily and quickly enter your travels and have your emissions calculated.
+              It takes into account the consumption of the vehicle and, of course, the specific distance you drove. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm ">
+        <div class="card">
+          <h5 class="card-header bg-primary">Our vision</h5>
+          <div class="card-body ">
+            <p class="card-text">Why should you use our emission calculator permanently?<br /> Quite simply, in order for everyone to make a difference, the first step is to raise awareness.
+               And that's exactly our goal: to raise the awareness of each individual through summaries and statistics and thus inspire a change in many. This is the only way to specifically save emissions and contribute to saving our planet. </p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="container-sm mt-5">
+  <div class="row">
+      <div class="col-sm mt-1">
+        <div  class="d-grid mx-auto">
+        <button type="button" *ngIf="token" (click)="addVehicleTamplate()" class="btn btn-outline-dark">Add vehicle template</button>
+        </div> 
+      </div>
+      <div class="col-sm mt-1">
+        <div class="d-grid mx-auto">
+          <button type="button" *ngIf="token" class="btn btn-outline-dark" routerLink="/selectInputScreen">Add trip</button>
+          </div> 
+      </div>
+    </div>
+  </div>
+
+ 
